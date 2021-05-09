@@ -24,13 +24,13 @@ newNameForm.addEventListener('submit',e=>{
     setTimeout(()=> updateMssg.innerText=``,3000);
 });
 
-
+const username=localStorage.username ? localStorage.username : 'Guest';
 
 
 
 
 const chatUI=new ChatUI(chatList);
-const chatroom=new Chatroom('general','lalit');
+const chatroom=new Chatroom('general',username);
 
 chatroom.getChats((data)=>{
     chatUI.render(data);
